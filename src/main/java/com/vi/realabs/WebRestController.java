@@ -32,15 +32,15 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class WebRestController {
 
-    @GetMapping("/demo")
-    public Principal get(Authentication authentication) {
-        return authentication;
-    }
-
     private final OAuth2AuthorizedClientService authorizedClientService;
 
     @Autowired
     private ClientRegistrationRepository clientRegistrationRepository;
+
+//    @GetMapping("/demo")
+//    public Principal get(Authentication authentication) {
+//        return authentication;
+//    }
 
     @GetMapping("/api/profile")
     public UserInfo getProfile(OAuth2AuthenticationToken token) {
